@@ -1,0 +1,9 @@
+{
+    "name": "makiavelo/quark",
+    "autoload": {
+        "psr-4": {
+            "Makiavelo\\Quark\\": "src/"
+        }
+    },
+    "require": {}
+}
