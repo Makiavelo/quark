@@ -15,6 +15,11 @@ class Response
 
     }
 
+    /**
+     * Get the current instance or create one
+     * 
+     * @return Makiavelo\Quark\Response
+     */
     public static function get()
     {
         if (!self::$instance) {
@@ -24,12 +29,24 @@ class Response
         return self::$instance;
     }
 
+    /**
+     * Re-create the current instance
+     * 
+     * @return Makiavelo\Quark\Response
+     */
     public static function resetInstance()
     {
         self::$instance = new Response();
         return self::$instance;
     }
 
+    /**
+     * Set the body of the response or return the current body.
+     * 
+     * @param mixed $content
+     * 
+     * @return string|Makiavelo\Quark\Response
+     */
     public function body($content = null)
     {
         if (!$content) {
@@ -40,6 +57,13 @@ class Response
         }
     }
 
+    /**
+     * Get or set the status of the response.
+     * 
+     * @param mixed $code
+     * 
+     * @return Makiavelo\Quark\Response
+     */
     public function status($code = null)
     {
         if ($code === null) return $this->status;
@@ -47,13 +71,30 @@ class Response
         return $this;
     }
 
+    /**
+     * Add a list of headers to be sent in the response.
+     * 
+     * @param array $headers
+     * 
+     * @return Makiavelo\Quark\Response
+     */
     public function addHeaders($headers)
     {
         foreach ($headers as $name => $value) {
             $this->addHeader($name, $value);
         }
+
+        return $this;
     }
 
+    /**
+     * Add a header to be sent in the response.
+     * 
+     * @param mixed $name
+     * @param mixed $value
+     * 
+     * @return Makiavelo\Quark\Response
+     */
     public function addHeader($name, $value)
     {
         $this->headers[] = [
@@ -63,13 +104,25 @@ class Response
         return $this;
     }
 
+    /**
+     * Reset the status, header and body of the response.
+     * 
+     * @return Makiavelo\Quark\Response
+     */
     public function clear()
     {
         $this->status = 200;
         $this->headers = [];
         $this->body = '';
+
+        return $this;
     }
 
+    /**
+     * Send the headers collection to the client
+     * 
+     * @return Makiavelo\Quark\Response
+     */
     public function sendHeaders()
     {
         if ($this->headers) {
@@ -77,8 +130,17 @@ class Response
                 header($name.': '.$value);
             }
         }
+
+        return $this;
     }
 
+    /**
+     * Send the response to the client
+     * 
+     * @param string $body
+     * 
+     * @return void
+     */
     public function send($body = '')
     {
         if ($body) {

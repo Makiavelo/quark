@@ -17,6 +17,11 @@ class Request
         $this->initParams();
     }
 
+    /**
+     * Initialize instance values based on superglobals.
+     * 
+     * @return void
+     */
     public function initParams()
     {
         $this->pathParams = [];
@@ -25,6 +30,11 @@ class Request
         $this->query = $_GET;
     }
 
+    /**
+     * Get the current instance or create one.
+     * 
+     * @return Makiavelo\Quark\Request
+     */
     public static function get()
     {
         if (!self::$instance) {
@@ -34,38 +44,87 @@ class Request
         return self::$instance;
     }
 
+    /**
+     * Recreate the request instance.
+     * 
+     * @return Makiavelo\Quark\Request
+     */
     public static function resetInstance()
     {
         self::$instance = new Request();
         return self::$instance;
     }
 
+    /**
+     * Get the current url's path.
+     * Eg: https://somesite.com/path/to/url
+     *     The path would be '/path/to/url'
+     * 
+     * @return string
+     */
     public function path()
     {
         $path = Common::get($_SERVER, 'PATH_INFO', '');
         return $path;
     }
 
+    /**
+     * Get the current request's method from superglobals.
+     * 
+     * @return string
+     */
     public static function method() {
         $method = Common::get($_SERVER, 'REQUEST_METHOD', 'GET');
         return strtoupper($method);
     }
 
+    /**
+     * Get a variable from the parameters bag.
+     * 
+     * @param mixed $name
+     * @param null $default
+     * 
+     * @return mixed
+     */
     public function param($name, $default = null)
     {
         return Common::get($this->params, $name, $default);
     }
 
+    /**
+     * Get a parameter from the POST variables ($_POST)
+     * 
+     * @param mixed $name
+     * @param null $default
+     * 
+     * @return mixed
+     */
     public function post($name, $default = null)
     {
         return Common::get($this->post, $name, $default);
     }
 
+    /**
+     * Get a parameter from the querystring ($_GET)
+     * 
+     * @param mixed $name
+     * @param null $default
+     * 
+     * @return mixed
+     */
     public function query($name, $default = null)
     {
         return Common::get($this->query, $name, $default);
     }
 
+    /**
+     * Adds the parameters found in the URL via rewrites.
+     * Eg: /users/:id/edit (param id = 1)
+     * 
+     * @param array $params
+     * 
+     * @return void
+     */
     public function addPathParams($params = [])
     {
         if ($params) {
@@ -74,6 +133,11 @@ class Request
         }
     }
 
+    /**
+     * Get the current request's scheme from superglobals.
+     * 
+     * @return string
+     */
     public static function getScheme() {
         if (
             (isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) === 'on')
@@ -89,13 +153,12 @@ class Request
         return 'http';
     }
 
+    /**
+     * Get the request body
+     * 
+     * @return mixed
+     */
     public function getBody() {
-        static $body;
-
-        if (!is_null($body)) {
-            return $body;
-        }
-
         $method = $this->method();
 
         if ($method == 'POST' || $method == 'PUT' || $method == 'DELETE' || $method == 'PATCH') {

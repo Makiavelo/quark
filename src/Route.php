@@ -14,6 +14,11 @@ class Route
     public $matched;
     public $params;
 
+    /**
+     * Create a new Route.
+     * 
+     * @param mixed $params
+     */
     public function __construct($params)
     {
         $this->callback = isset($params['callback']) ? $params['callback'] : null;
@@ -24,6 +29,11 @@ class Route
         $this->continue = true;
     }
 
+    /**
+     * Check if the route matches the current request
+     * 
+     * @return boolean
+     */
     public function match()
     {
         $path = Quark::app()->request->path();
@@ -51,6 +61,13 @@ class Route
         return false;
     }
 
+    /**
+     * Get all the parameter names from the url
+     * Eg: /user/:id/edit
+     * would return ['id']
+     * 
+     * @return array
+     */
     public function getNamedParams()
     {
         $matches = [];
