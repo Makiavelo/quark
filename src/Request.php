@@ -64,8 +64,10 @@ class Request
      */
     public function path()
     {
-        $path = Common::get($_SERVER, 'PATH_INFO', '');
-        return $path;
+        $path = Common::get($_SERVER, 'REQUEST_URI');
+        if (!$path) {
+            $path = Common::get($_SERVER, 'PATH_INFO', '');
+        }
     }
 
     /**
