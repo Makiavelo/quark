@@ -68,6 +68,8 @@ class Request
         if (!$path) {
             $path = Common::get($_SERVER, 'PATH_INFO', '');
         }
+
+        return $path;
     }
 
     /**
