@@ -97,9 +97,7 @@ class Response
      */
     public function addHeader($name, $value)
     {
-        $this->headers[] = [
-            $name => $value
-        ];
+        $this->headers[$name] = $value;
 
         return $this;
     }
@@ -149,5 +147,19 @@ class Response
         
         $this->sendHeaders();
         echo $this->body;
+    }
+
+    /**
+     * Shortcut to send a json response
+     * 
+     * @param array $data
+     * 
+     * @return Response
+     */
+    public function json($data = [])
+    {
+        $this->addHeader('Content-Type', 'application/json');
+        $this->body = json_encode($data);
+        return $this->send();
     }
 }

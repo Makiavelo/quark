@@ -1,5 +1,8 @@
 {
     "name": "makiavelo/quark",
+    "scripts": {
+        "build-phar": "./util/build_phar.sh"
+    },
     "autoload": {
         "psr-4": {
             "Makiavelo\\Quark\\": "src/"
