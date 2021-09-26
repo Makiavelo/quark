@@ -1,7 +1,9 @@
 {
     "name": "makiavelo/quark",
     "scripts": {
-        "build-phar": "./util/build_phar.sh"
+        "build-phar": "./util/build_phar.sh",
+        "build-docs": "./util/build_docs.sh",
+        "build-all": "./util/build_docs.sh && ./util/build_phar.sh"
     },
     "autoload": {
         "psr-4": {
