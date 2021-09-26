@@ -7,6 +7,12 @@ Source files are under 200 lines each (comments included).
 ```
 composer require makiavelo/quark
 ```
+Or update dependencies in composer.json
+```json
+"require": {
+    "makiavelo/quark": "dev-master"
+}
+```
 
 ## Install with single file
 The repository contains a phar file which can be included directly to avoid using composer.
