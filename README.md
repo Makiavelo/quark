@@ -275,3 +275,6 @@ The $params variable should be an associative array, which will be extracted to 
     </body>
 </html>
 ```
+
+## Documentation
+The documentation of the classes can be found in the 'docs' folder. Can be viewed online on github pages here: https://makiavelo.github.io/quark/
