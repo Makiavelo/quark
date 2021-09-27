@@ -38,7 +38,7 @@ final class ResponseTest extends TestCase
         $res = Response::get();
         $res->addHeader('test_header', '1234');
 
-        $this->assertEquals($res->headers[0]['test_header'], '1234');
+        $this->assertEquals($res->headers['test_header'], '1234');
 
         $res->clear();
 
@@ -47,8 +47,8 @@ final class ResponseTest extends TestCase
             'test_3' => '4567'
         ]);
 
-        $this->assertEquals($res->headers[0]['test_2'], 'abcd');
-        $this->assertEquals($res->headers[1]['test_3'], '4567');
+        $this->assertEquals($res->headers['test_2'], 'abcd');
+        $this->assertEquals($res->headers['test_3'], '4567');
     }
 
     public function testClear()

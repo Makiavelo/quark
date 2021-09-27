@@ -31,6 +31,11 @@ Search.appendIndex(
             "summary": "Execute\u0020a\u0020route\u0027s\u0020callback\u0020and\u0020update\u0020request\u0020params.",
             "url": "classes/Makiavelo-Quark-Quark.html#method_applyRoute"
         },                {
+            "fqsen": "\\Makiavelo\\Quark\\Quark\u003A\u003Amiddleware\u0028\u0029",
+            "name": "middleware",
+            "summary": "Add\u0020a\u0020routed\u0020middleware\u0020to\u0020the\u0020stack.",
+            "url": "classes/Makiavelo-Quark-Quark.html#method_middleware"
+        },                {
             "fqsen": "\\Makiavelo\\Quark\\Quark\u003A\u003Ause\u0028\u0029",
             "name": "use",
             "summary": "Add\u0020a\u0020routed\u0020middleware\u0020to\u0020the\u0020stack.",
@@ -65,6 +70,11 @@ Search.appendIndex(
             "name": "patch",
             "summary": "Shorthand\u0020method\u0020to\u0020add\u0020a\u0020\u0027PATCH\u0027\u0020route.",
             "url": "classes/Makiavelo-Quark-Quark.html#method_patch"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Quark\u003A\u003Aall\u0028\u0029",
+            "name": "all",
+            "summary": "Shorthand\u0020method\u0020for\u0020ALL\u0020methods",
+            "url": "classes/Makiavelo-Quark-Quark.html#method_all"
         },                {
             "fqsen": "\\Makiavelo\\Quark\\Quark\u003A\u003A\u0024instance",
             "name": "instance",
@@ -236,10 +246,35 @@ Search.appendIndex(
             "summary": "Shortcut\u0020to\u0020send\u0020a\u0020json\u0020response",
             "url": "classes/Makiavelo-Quark-Response.html#method_json"
         },                {
+            "fqsen": "\\Makiavelo\\Quark\\Response\u003A\u003AhasRendered\u0028\u0029",
+            "name": "hasRendered",
+            "summary": "Flag\u0020if\u0020the\u0020response\u0020has\u0020already\u0020rendered\u0020content",
+            "url": "classes/Makiavelo-Quark-Response.html#method_hasRendered"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Response\u003A\u003Aredirect\u0028\u0029",
+            "name": "redirect",
+            "summary": "Send\u0020redirect\u0020headers\u0020to\u0020the\u0020browser\u0020and\u0020stop\u0020the\u0020application",
+            "url": "classes/Makiavelo-Quark-Response.html#method_redirect"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Response\u003A\u003Aend\u0028\u0029",
+            "name": "end",
+            "summary": "Exit\u0020the\u0020application",
+            "url": "classes/Makiavelo-Quark-Response.html#method_end"
+        },                {
             "fqsen": "\\Makiavelo\\Quark\\Response\u003A\u003A\u0024headers",
             "name": "headers",
             "summary": "",
             "url": "classes/Makiavelo-Quark-Response.html#property_headers"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Response\u003A\u003A\u0024rendered",
+            "name": "rendered",
+            "summary": "",
+            "url": "classes/Makiavelo-Quark-Response.html#property_rendered"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Response\u003A\u003A\u0024headersSent",
+            "name": "headersSent",
+            "summary": "",
+            "url": "classes/Makiavelo-Quark-Response.html#property_headersSent"
         },                {
             "fqsen": "\\Makiavelo\\Quark\\Response\u003A\u003A\u0024instance",
             "name": "instance",
@@ -255,6 +290,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "Create\u0020a\u0020new\u0020Route.",
             "url": "classes/Makiavelo-Quark-Route.html#method___construct"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Route\u003A\u003AgetDefaultParams\u0028\u0029",
+            "name": "getDefaultParams",
+            "summary": "Get\u0020the\u0020default\u0020parameters\u0020for\u0020creating\u0020a\u0020route",
+            "url": "classes/Makiavelo-Quark-Route.html#method_getDefaultParams"
         },                {
             "fqsen": "\\Makiavelo\\Quark\\Route\u003A\u003Amatch\u0028\u0029",
             "name": "match",
@@ -295,6 +335,11 @@ Search.appendIndex(
             "name": "params",
             "summary": "",
             "url": "classes/Makiavelo-Quark-Route.html#property_params"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Route\u003A\u003A\u0024type",
+            "name": "type",
+            "summary": "",
+            "url": "classes/Makiavelo-Quark-Route.html#property_type"
         },                {
             "fqsen": "\\Makiavelo\\Quark\\Util\\Common",
             "name": "Common",

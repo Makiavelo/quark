@@ -54,7 +54,7 @@ final class RouteTest extends TestCase
 
         $route = new Route([
             'method' => 'GET',
-            'path' => '/provider/:id'
+            'path' => '/provider/@id'
         ]);
 
         $this->assertTrue($route->match());
@@ -67,7 +67,7 @@ final class RouteTest extends TestCase
 
         $route = new Route([
             'method' => 'GET',
-            'path' => '/provider/:provider_id/place/:place_id/edit'
+            'path' => '/provider/@provider_id/place/@place_id/edit'
         ]);
 
         $this->assertTrue($route->match());

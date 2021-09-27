@@ -7,6 +7,8 @@ class Response
     public $status = 200;
     public $headers = [];
     public $body;
+    public $rendered = false;
+    public $headersSent = false;
 
     protected static $instance;
 
@@ -127,6 +129,7 @@ class Response
             foreach ($this->headers as $name => $value) {
                 header($name.': '.$value);
             }
+            $this->headerSent = true;
         }
 
         return $this;
@@ -146,7 +149,10 @@ class Response
         }
         
         $this->sendHeaders();
+        $this->rendered = true;
         echo $this->body;
+
+        return $this;
     }
 
     /**
@@ -160,6 +166,41 @@ class Response
     {
         $this->addHeader('Content-Type', 'application/json');
         $this->body = json_encode($data);
-        return $this->send();
+        $this->send();
+        return $this;
+    }
+
+    /**
+     * Flag if the response has already rendered content
+     * 
+     * @return boolean
+     */
+    public function hasRendered()
+    {
+        return $this->rendered;
+    }
+
+    /**
+     * Send redirect headers to the browser and stop the application
+     * 
+     * @param string $url
+     * 
+     * @return void
+     */
+    public function redirect($url)
+    {
+        $this->addHeader('Location', $url);
+        $this->sendHeaders();
+        $this->end();
+    }
+
+    /**
+     * Exit the application
+     * 
+     * @return void
+     */
+    public function end()
+    {
+        exit;
     }
 }

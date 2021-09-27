@@ -80,8 +80,44 @@ class Quark
      */
     public function applyRoute(Route $route)
     {
-        $this->request->addPathParams($route->params);
-        call_user_func($route->callback, $this->request, $this->response);
+        if ($route->type === 'renderer') {
+            if (!$this->response->hasRendered()) {
+                $this->request->addPathParams($route->params);
+                $result = call_user_func($route->callback, $this->request, $this->response);
+
+                if ($result === false) {
+                    $route->continue = false;
+                }
+            }
+        } else {
+            $result = call_user_func($route->callback, $this->request, $this->response);
+            if ($result === false) {
+                $route->continue = false;
+            }
+        }
+    }
+
+    /**
+     * Add a routed middleware to the stack.
+     * 
+     * @param string $path
+     * @param mixed $callback
+     * @param string $params
+     * 
+     * @return Makiavelo\Quark\Quark
+     */
+    public function middleware($path, $callback, $params = [])
+    {
+        $merged = array_merge(Route::getDefaultParams(), $params);
+        $route = new Route([
+            'path' => $path,
+            'callback' => $callback,
+            'method' => $merged['method'],
+            'type' => $merged['type']
+        ]);
+
+        $this->addRoute($route);
+        return $this;
     }
 
     /**
@@ -91,17 +127,16 @@ class Quark
      * @param mixed $callback
      * @param string $method
      * 
-     * @return void
+     * @return Makiavelo\Quark\Quark
      */
     public function use($path, $callback, $method = 'ALL')
     {
-        $route = new Route([
-            'path' => $path,
-            'callback' => $callback,
-            'method' => $method
-        ]);
-
-        $this->addRoute($route);
+        $params = [
+            'method' => $method,
+            'type' => 'simple'
+        ];
+        $this->middleware($path, $callback, $params);
+        return $this;
     }
 
     /**
@@ -127,7 +162,7 @@ class Quark
      */
     public function get($path, $callback)
     {
-        $this->use($path, $callback, 'GET');
+        $this->middleware($path, $callback, ['method' => 'GET']);
         return $this;
     }
 
@@ -141,7 +176,8 @@ class Quark
      */
     public function post($path, $callback)
     {
-        $this->use($path, $callback, 'POST');
+        $this->middleware($path, $callback, ['method' => 'POST']);
+        return $this;
     }
 
     /**
@@ -154,7 +190,8 @@ class Quark
      */
     public function put($path, $callback)
     {
-        $this->use($path, $callback, 'PUT');
+        $this->middleware($path, $callback, ['method' => 'PUT']);
+        return $this;
     }
 
     /**
@@ -167,7 +204,8 @@ class Quark
      */
     public function delete($path, $callback)
     {
-        $this->use($path, $callback, 'DELETE');
+        $this->middleware($path, $callback, ['method' => 'DELETE']);
+        return $this;
     }
 
     /**
@@ -180,6 +218,21 @@ class Quark
      */
     public function patch($path, $callback)
     {
-        $this->use($path, $callback, 'PATCH');
+        $this->middleware($path, $callback, ['method' => 'PATCH']);
+        return $this;
+    }
+
+    /**
+     * Shorthand method for ALL methods
+     * 
+     * @param string $path
+     * @param mixed $callback
+     * 
+     * @return Makiavelo\Quark\Quark
+     */
+    public function all($path, $callback)
+    {
+        $this->middleware($path, $callback, ['method' => 'ALL']);
+        return $this;
     }
 }
