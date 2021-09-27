@@ -8,12 +8,8 @@ use Makiavelo\Quark\Response;
 
 $app = Quark::app();
 
-$app->use('/admin', function($req, $res) {
-    // Auth here...
-});
-
 $app->get('/', function(Request $req, Response $res) {
-    $res->status(200)->body('Provider index')->send();
+    $res->status(200)->send('Index page');
 });
 
 $app->get('/provider/:id', function(Request $req, Response $res) {
@@ -24,10 +20,6 @@ $app->get('/provider/:id', function(Request $req, Response $res) {
 
 $app->post('/provider/:id', function(Request $req, Response $res) {
     $res->status(200)->body('Provider edit: ' . $req->param('id', 'N/A'))->send();
-});
-
-$app->use('/api', function (Request $req, Response $res) {
-    // API OAuth 2.0
 });
 
 $app->start();
