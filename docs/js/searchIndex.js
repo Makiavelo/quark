@@ -381,6 +381,11 @@ Search.appendIndex(
             "summary": "Gets\u0020the\u0020output\u0020of\u0020a\u0020template.",
             "url": "classes/Makiavelo-Quark-View.html#method_fetch"
         },                {
+            "fqsen": "\\Makiavelo\\Quark\\View\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/Makiavelo-Quark-View.html#method___toString"
+        },                {
             "fqsen": "\\Makiavelo\\Quark\\View\u003A\u003A\u0024vars",
             "name": "vars",
             "summary": "View\u0020variables.",

@@ -22,11 +22,13 @@ class View
      * Constructor.
      *
      * @param string $path Path to templates directory
+     * @param string $vars
      */
-    public function __construct($path) {
+    public function __construct($path, $vars = []) {
         if (!file_exists($path)) {
             throw new \Exception("Template file not found: {$path}.");
         } else {
+            $this->vars = $vars;
             $this->template = $path;
         }
     }
@@ -59,5 +61,10 @@ class View
         $output = ob_get_clean();
 
         return $output;
+    }
+
+    public function __toString()
+    {
+        return $this->fetch();
     }
 }
