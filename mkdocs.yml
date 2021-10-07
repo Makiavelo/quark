@@ -1,0 +1,19 @@
+site_name: Quark
+
+repo_url: https://github.com/Makiavelo/quark
+
+docs_dir: docs
+
+theme: readthedocs
+
+dev_addr: 0.0.0.0:8000
+
+nav:
+    - Home: index.md
+    - Setup: setup.md
+    - Usage: usage.md
+    - Middlewares: middlewares.md
+    - Responses: responses.md
+    - Request object: request.md
+    - Views: views.md
+    - Classes documentation: documentation.md

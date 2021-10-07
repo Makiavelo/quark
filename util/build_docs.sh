@@ -1,2 +1,2 @@
 rm -rf docs/*
-phpdoc -d ./src -t ./docs
+phpdoc -d ./src -t ./phpdocs
