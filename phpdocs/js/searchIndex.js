@@ -46,6 +46,11 @@ Search.appendIndex(
             "summary": "Add\u0020a\u0020route\u0020to\u0020the\u0020routes\u0020collection.",
             "url": "classes/Makiavelo-Quark-Quark.html#method_addRoute"
         },                {
+            "fqsen": "\\Makiavelo\\Quark\\Quark\u003A\u003AaddRouter\u0028\u0029",
+            "name": "addRouter",
+            "summary": "Add\u0020a\u0020router",
+            "url": "classes/Makiavelo-Quark-Quark.html#method_addRouter"
+        },                {
             "fqsen": "\\Makiavelo\\Quark\\Quark\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Shorthand\u0020method\u0020to\u0020add\u0020a\u0020\u0027GET\u0027\u0020route.",
@@ -495,6 +500,46 @@ Search.appendIndex(
             "name": "instance",
             "summary": "",
             "url": "classes/Makiavelo-Quark-Util-Session.html#property_instance"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Router",
+            "name": "Router",
+            "summary": "Class\u0020to\u0020group\u0020\u0027Route\u0027\u0020objects",
+            "url": "classes/Makiavelo-Quark-Router.html"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Router\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "A\u0020preffix\u0020added\u0020to\u0020each\u0020route",
+            "url": "classes/Makiavelo-Quark-Router.html#method___construct"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Router\u003A\u003Ainit\u0028\u0029",
+            "name": "init",
+            "summary": "",
+            "url": "classes/Makiavelo-Quark-Router.html#method_init"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Router\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "Add\u0020a\u0020route\u0020to\u0020the\u0020collection",
+            "url": "classes/Makiavelo-Quark-Router.html#method_add"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Router\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "Remove\u0020a\u0020route\u0020from\u0020the\u0020collection\u0020by\u0020\u0027path\u0027",
+            "url": "classes/Makiavelo-Quark-Router.html#method_remove"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Router\u003A\u003Aclear\u0028\u0029",
+            "name": "clear",
+            "summary": "Empty\u0020the\u0020routes\u0020collection",
+            "url": "classes/Makiavelo-Quark-Router.html#method_clear"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Router\u003A\u003A\u0024routes",
+            "name": "routes",
+            "summary": "",
+            "url": "classes/Makiavelo-Quark-Router.html#property_routes"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Router\u003A\u003A\u0024basePath",
+            "name": "basePath",
+            "summary": "",
+            "url": "classes/Makiavelo-Quark-Router.html#property_basePath"
         },                {
             "fqsen": "\\",
             "name": "\\",
