@@ -1,2 +1,2 @@
-phpdocs/* linguist-documentation
-docs/* linguist-documentation
+phpdocs/** linguist-documentation
+docs/** linguist-documentation
