@@ -65,6 +65,7 @@ class Request
     public function path()
     {
         $path = Common::get($_SERVER, 'REQUEST_URI');
+        $path = parse_url($path, PHP_URL_PATH);
         if (!$path) {
             $path = Common::get($_SERVER, 'PATH_INFO', '');
         }
