@@ -17,4 +17,7 @@ Source files are under 200 lines each (comments included).
   * [Responses](responses.md)
   * [Request object](request.md)
   * [Views](views.md)
+  * [Utilities](session.md)
+    + [Session](session.md)
+    + [Cookies](cookies.md)
   * [Classes documentation](documentation.md)

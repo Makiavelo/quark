@@ -46,6 +46,42 @@ class Common
     }
 
     /**
+     * Remove an element by key from the collection
+     * 
+     * If something was unset, returns true, false otherwise.
+     * 
+     * @param mixed $collection
+     * @param string $key
+     * 
+     * @return boolean
+     */
+    public static function remove(&$collection, $key)
+    {
+        if ($key === null || $key === false) {
+            return false;
+        }
+
+        $parts = explode('->', $key);
+        $total = count($parts);
+
+        if ($total === 1) {
+            if (isset($collection[$parts[0]])) {
+                unset($collection[$parts[0]]);
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            if (!isset($collection[$parts[0]])) {
+                return true;
+            }
+
+            $current = array_shift($parts);
+            self::remove($collection[$current], implode('->', $parts));
+        }
+    }
+
+    /**
      * Set a value inside a collection using a path.
      * Eg: Common::set($collection, 'user->card->number)
      *     if collection doesn't have the 'user' attribute
@@ -73,10 +109,14 @@ class Common
             }
         } else {
             if (is_object($collection)) {
-                $collection->{$segment} = $container === 'array' ? [] : new \stdClass();
+                if (!isset($collection->{$segment}) || !$collection->{$segment}) {
+                    $collection->{$segment} = $container === 'array' ? [] : new \stdClass();
+                }
                 $collection->{$segment} = Common::set($collection->{$segment}, implode('->', $parts), $value, $container);
             } else {
-                $collection[$segment] = $container === 'array' ? [] : new \stdClass();
+                if (!isset($collection[$segment]) || !$collection[$segment]) {
+                    $collection[$segment] = $container === 'array' ? [] : new \stdClass();
+                }
                 $collection[$segment] = Common::set($collection[$segment], implode('->', $parts), $value, $container);
             }
         }
@@ -137,5 +177,19 @@ class Common
         }
 
         return $return;
+    }
+
+    public static function isCollection($var)
+    {
+        $is = false;
+        // Can be associative
+        if (is_array($var)) {
+            if ($var) {
+                // Are all numeric keys?
+                $is = array_keys($var) === range(0, count($var) - 1);
+            }
+        }
+
+        return $is;
     }
 }
