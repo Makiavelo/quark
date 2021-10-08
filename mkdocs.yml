@@ -13,6 +13,7 @@ nav:
     - Setup: setup.md
     - Usage: usage.md
     - Middlewares: middlewares.md
+    - Routers: router.md
     - Responses: responses.md
     - Request object: request.md
     - Views: views.md
