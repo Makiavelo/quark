@@ -351,6 +351,11 @@ Search.appendIndex(
             "summary": "Get\u0020a\u0020value\u0020from\u0020a\u0020collection\u0020using\u0020a\u0020path.",
             "url": "classes/Makiavelo-Quark-Util-Common.html#method_get"
         },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Common\u003A\u003Aremove\u0028\u0029",
+            "name": "remove",
+            "summary": "Remove\u0020an\u0020element\u0020by\u0020key\u0020from\u0020the\u0020collection",
+            "url": "classes/Makiavelo-Quark-Util-Common.html#method_remove"
+        },                {
             "fqsen": "\\Makiavelo\\Quark\\Util\\Common\u003A\u003Aset\u0028\u0029",
             "name": "set",
             "summary": "Set\u0020a\u0020value\u0020inside\u0020a\u0020collection\u0020using\u0020a\u0020path.",
@@ -360,6 +365,11 @@ Search.appendIndex(
             "name": "find",
             "summary": "Find\u0020one\u0020or\u0020more\u0020elements\u0020inside\u0020a\u0020collection\u0020where\nthe\u0020path\u0020resolves\u0020to\u0020the\u0020value\u0020provided.",
             "url": "classes/Makiavelo-Quark-Util-Common.html#method_find"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Common\u003A\u003AisCollection\u0028\u0029",
+            "name": "isCollection",
+            "summary": "",
+            "url": "classes/Makiavelo-Quark-Util-Common.html#method_isCollection"
         },                {
             "fqsen": "\\Makiavelo\\Quark\\View",
             "name": "View",
@@ -395,6 +405,96 @@ Search.appendIndex(
             "name": "template",
             "summary": "Template\u0020file.",
             "url": "classes/Makiavelo-Quark-View.html#property_template"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Cookies",
+            "name": "Cookies",
+            "summary": "Simple\u0020wrapper\u0020around\u0020\u0024_COOKIE\u0020and\u0020cookies\u0020creation",
+            "url": "classes/Makiavelo-Quark-Util-Cookies.html"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Cookies\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Makiavelo-Quark-Util-Cookies.html#method___construct"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Cookies\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Get\u0020the\u0020current\u0020instance\u0020or\u0020create\u0020one.",
+            "url": "classes/Makiavelo-Quark-Util-Cookies.html#method_get"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Cookies\u003A\u003AresetInstance\u0028\u0029",
+            "name": "resetInstance",
+            "summary": "Recreate\u0020the\u0020session\u0020instance.",
+            "url": "classes/Makiavelo-Quark-Util-Cookies.html#method_resetInstance"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Cookies\u003A\u003Aparam\u0028\u0029",
+            "name": "param",
+            "summary": "Get\u0020a\u0020\u0024_COOKIE\u0020value",
+            "url": "classes/Makiavelo-Quark-Util-Cookies.html#method_param"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Cookies\u003A\u003Asend\u0028\u0029",
+            "name": "send",
+            "summary": "Send\u0020a\u0020cookie\u0020via\u0020\u0027setcookie\u0027",
+            "url": "classes/Makiavelo-Quark-Util-Cookies.html#method_send"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Cookies\u003A\u003AgetDefaultCookieParams\u0028\u0029",
+            "name": "getDefaultCookieParams",
+            "summary": "Get\u0020Default\u0020values\u0020for\u0020\u0027setcookie\u0027\u0020in\u0020array\u0020format.",
+            "url": "classes/Makiavelo-Quark-Util-Cookies.html#method_getDefaultCookieParams"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Cookies\u003A\u003A\u0024instance",
+            "name": "instance",
+            "summary": "",
+            "url": "classes/Makiavelo-Quark-Util-Cookies.html#property_instance"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Session",
+            "name": "Session",
+            "summary": "Simple\u0020wrapper\u0020around\u0020\u0024_SESSION",
+            "url": "classes/Makiavelo-Quark-Util-Session.html"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Session\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Makiavelo-Quark-Util-Session.html#method___construct"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Session\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Get\u0020the\u0020current\u0020instance\u0020or\u0020create\u0020one.",
+            "url": "classes/Makiavelo-Quark-Util-Session.html#method_get"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Session\u003A\u003AresetInstance\u0028\u0029",
+            "name": "resetInstance",
+            "summary": "Recreate\u0020the\u0020session\u0020instance.",
+            "url": "classes/Makiavelo-Quark-Util-Session.html#method_resetInstance"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Session\u003A\u003Aparam\u0028\u0029",
+            "name": "param",
+            "summary": "Get\u0020a\u0020session\u0020parameter",
+            "url": "classes/Makiavelo-Quark-Util-Session.html#method_param"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Session\u003A\u003Aset\u0028\u0029",
+            "name": "set",
+            "summary": "Set\u0020a\u0020session\u0020parameter",
+            "url": "classes/Makiavelo-Quark-Util-Session.html#method_set"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Session\u003A\u003Astart\u0028\u0029",
+            "name": "start",
+            "summary": "Start\u0020a\u0020session\u0020with\u0020session_start\u0028\u0029",
+            "url": "classes/Makiavelo-Quark-Util-Session.html#method_start"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Session\u003A\u003Adestroy\u0028\u0029",
+            "name": "destroy",
+            "summary": "Destroy\u0020a\u0020session\u0020with\u0020session_destroy\u0028\u0029",
+            "url": "classes/Makiavelo-Quark-Util-Session.html#method_destroy"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Session\u003A\u003Amethod\u0028\u0029",
+            "name": "method",
+            "summary": "Call\u0020any\u0020session_\u002A\u0020method\u0020with\u0020parameters\u0020\u0028if\u0020any\u0029",
+            "url": "classes/Makiavelo-Quark-Util-Session.html#method_method"
+        },                {
+            "fqsen": "\\Makiavelo\\Quark\\Util\\Session\u003A\u003A\u0024instance",
+            "name": "instance",
+            "summary": "",
+            "url": "classes/Makiavelo-Quark-Util-Session.html#property_instance"
         },                {
             "fqsen": "\\",
             "name": "\\",
