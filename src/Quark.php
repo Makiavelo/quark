@@ -4,6 +4,7 @@ namespace Makiavelo\Quark;
 
 use Makiavelo\Quark\Request;
 use Makiavelo\Quark\Response;
+use Makiavelo\Quark\Router;
 
 /**
  * Middlewares microframework
@@ -149,6 +150,24 @@ class Quark
     public function addRoute(Route $route)
     {
         $this->routes[] = $route;
+        return $this;
+    }
+
+    /**
+     * Add a router
+     * 
+     * @param Route $route
+     * 
+     * @return Makiavelo\Quark\Quark
+     */
+    public function addRouter(Router $router)
+    {
+        if ($router->routes()) {
+            foreach ($router->routes() as $route) {
+                $this->middleware($route->path, $route->callback, ['method' => $route->method]);
+            }
+        }
+
         return $this;
     }
     

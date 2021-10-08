@@ -6,6 +6,7 @@ use \Mockery as m;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use Makiavelo\Quark\Quark;
 use Makiavelo\Quark\Route;
+use Makiavelo\Quark\Router;
 
 final class QuarkTest extends TestCase
 {
@@ -125,5 +126,26 @@ final class QuarkTest extends TestCase
         Quark::app()->patch('/some/post/path', $spy);
 
         $this->assertEquals(Quark::app()->routes[0]->method, 'PATCH');
+    }
+
+    public function testRouter()
+    {
+        Quark::app()->resetInstance();
+        $app = Quark::app();
+
+        $router = new Router('/user');
+
+        $router->add(new Route([
+            'path' => '/view',
+            'method' => 'GET'
+        ]));
+
+        $router->add(new Route([
+            'path' => '/edit',
+            'method' => 'POST'
+        ]));
+
+        $app->addRouter($router);
+        $this->assertCount(2, $app->routes);
     }
 }

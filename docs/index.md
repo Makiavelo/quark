@@ -14,6 +14,7 @@ Source files are under 200 lines each (comments included).
     + [Example 3](usage.md#example-3)
     + [Example 4](usage.md#example-4)
   * [Middlewares](middlewares.md)
+  * [Router](router.md)
   * [Responses](responses.md)
   * [Request object](request.md)
   * [Views](views.md)
